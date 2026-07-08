@@ -41,3 +41,13 @@ The first target is feasibility, not interactive performance.
 Status: planning scaffold
 
 This repository currently contains the project intention and operating contract. Implementation should begin with model metadata inspection and memory budgeting before any runtime executor is built.
+
+## Documentation
+
+- [Concept](docs/concept.md) - the full idea in product and research terms.
+- [Feasibility](docs/feasibility.md) - what is plausible, risky, and likely to fail.
+- [Architecture](docs/architecture.md) - proposed runtime domains and data flow.
+- [Model Targets](docs/model-targets.md) - current Kimi K2.6 and GLM-5.2 metadata estimates.
+- [KV Cache Strategy](docs/kv-cache-strategy.md) - why KV state is the hard problem and how to test options.
+- [Roadmap](docs/roadmap.md) - staged path from metadata estimator to runtime proof.
+- [Nexus Engine Path](docs/nexus-engine-path.md) - future domain-kit promotion boundary.
