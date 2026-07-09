@@ -13,6 +13,7 @@ Create a public research runtime that can estimate, schedule, and eventually exe
 - The runtime can build a resumable local cache plan for only the needed tensors.
 - The runtime can run or simulate layer-by-layer execution under a configured RAM and disk budget.
 - KV cache strategies are measured separately from weight streaming.
+- Feasibility is reported only from repeatable validation artifacts, with correctness, resource, and recovery results kept separate.
 - The project can clearly report when a model is feasible, barely feasible, or not feasible on a target device.
 - Nexus Engine domain-kit promotion is considered only after the standalone harness has proof.
 
@@ -26,3 +27,7 @@ Build a manifest-only estimator for Kimi K2.6 and GLM-5.2 that reports:
 - attention/shared/expert tensor groups where discoverable
 - minimum local cache window
 - expected MacBook Air feasibility band
+
+## Evidence Standard
+
+The estimator and later runtime must write a versioned report plus JSONL proof events. A model is not called runnable on a target device until the relevant validation gates in `docs/validation.md` have passed.

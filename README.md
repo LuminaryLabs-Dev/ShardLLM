@@ -49,5 +49,8 @@ This repository currently contains the project intention and operating contract.
 - [Architecture](docs/architecture.md) - proposed runtime domains and data flow.
 - [Model Targets](docs/model-targets.md) - current Kimi K2.6 and GLM-5.2 metadata estimates.
 - [KV Cache Strategy](docs/kv-cache-strategy.md) - why KV state is the hard problem and how to test options.
+- [Validation Plan](docs/validation.md) - pass/fail proof gates for metadata, execution, cache, KV, and long runs.
+- [Experiment Matrix](docs/experiment-matrix.md) - ordered experiments that reduce feasibility uncertainty.
+- [Artifact Contracts](docs/artifact-contracts.md) - reproducible manifests, plans, proof events, and reports.
 - [Roadmap](docs/roadmap.md) - staged path from metadata estimator to runtime proof.
 - [Nexus Engine Path](docs/nexus-engine-path.md) - future domain-kit promotion boundary.

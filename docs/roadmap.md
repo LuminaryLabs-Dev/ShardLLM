@@ -6,7 +6,7 @@ Status: active
 
 Goal: capture the project idea, feasibility boundaries, architecture, model targets, KV risk, and Nexus Engine path.
 
-Status: in progress
+Status: complete
 
 Exit criteria:
 
@@ -14,6 +14,7 @@ Exit criteria:
 - README links to docs
 - model target metadata is recorded
 - first milestone is clear
+- validation gates, experiment order, and proof artifact contracts are documented
 
 ## Phase 1 - Manifest-Only Estimator
 

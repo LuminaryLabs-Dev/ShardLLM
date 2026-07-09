@@ -29,7 +29,9 @@ model-source
 - For MoE models, prefer active-expert streaming over whole-layer streaming.
 - Keep KV cache work as a first-class domain because long-context KV growth is likely the main constraint.
 - Make every feasibility claim proof-backed with measured memory, disk, network, and token timing.
+- Separate correctness, resource bounds, resume behavior, and KV quality in versioned validation artifacts; no single measurement establishes feasibility.
 - Keep Nexus Engine integration as a later domain-kit promotion path, not the first implementation step.
+- Use `.agent/` as the goal-mode workspace for live progress, subgoals, lessons, feedback, and resumable agent handoff.
 
 ## Initial Model Targets
 

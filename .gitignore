@@ -1,0 +1,12 @@
+# Local ShardLLM cache, downloaded ranges, run checkpoints, and proof output.
+.shardllm-cache/
+
+# Local configuration and credentials. Keep a committed example file if one is added.
+.env
+.env.*
+!.env.example
+
+# Machine and temporary diagnostic files.
+.DS_Store
+*.log
+*.tmp
