@@ -10,6 +10,7 @@ ShardLLM must validate each uncertainty separately. A low memory reading does no
 |---|---|---|
 | Inspectable | Remote metadata and index are read without full-weight download. | A model card or guessed parameter count. |
 | Plannable | Tensor map and bounded cache plan are generated. | Average bytes per layer. |
+| Hybrid plannable | Local/remote ownership, data motion, cache policy, and blockers are explicit. | Selecting `remote-expert` or `remote-block` in a config. |
 | Executable slice | A selected tensor group runs against a reference result. | Loading tensors into memory. |
 | Bounded runtime | Peak RAM, cache disk, and network use stay within configured budgets. | A successful one-off run. |
 | Resumable | An interrupted run restores its declared state and continues correctly. | Persisting a log file. |
@@ -111,6 +112,27 @@ Pass condition:
 
 - The resumed run either produces the baseline continuation or clearly labels the state as approximate and measures the divergence.
 - Missing cache entries are recovered through the recorded source and policy, never silently substituted.
+
+## Gate 5A - Hybrid Adapter
+
+Purpose: prove that moving compute toward remote weights reduces client data motion without changing model behavior silently.
+
+Procedure:
+
+1. Run a small-model local reference under deterministic settings.
+2. Run the same layer or expert through the remote adapter.
+3. Compare output tensors, logits, and generated token IDs where available.
+4. Record activation bytes, protocol overhead, round trips, remote compute time, and client weight bytes avoided.
+5. Confirm the declared RAM and persistent weight-storage policies on the client.
+6. Exercise timeout, retry, disconnect, and untrusted-response handling.
+
+Pass condition:
+
+- Numerical differences remain within a declared tolerance.
+- Remote execution moves fewer client bytes than its local-stream baseline.
+- Credentials are absent from artifacts and nonlocal traffic uses an approved secure transport.
+- Client persistent weight storage matches the declared policy.
+- Failures produce explicit proof events and do not silently corrupt continuation state.
 
 ## Gate 6 - KV Policies
 

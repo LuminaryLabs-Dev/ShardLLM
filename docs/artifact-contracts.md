@@ -12,6 +12,7 @@ ShardLLM needs stable artifacts before it needs a broad runtime API. These files
   tensor-index.json
   budget.json
   cache-plan.json
+  execution-plan.json
   run-config.json
   proof.jsonl
   report.json
@@ -43,6 +44,11 @@ Required fields:
 
 `tensor-index.json` is a normalized interpretation, not a replacement for the upstream index.
 
+It supports two detail levels:
+
+- `full` preserves one normalized record per source tensor.
+- `summary` preserves counts, groups, layers, and shard identities without expanding every tensor record.
+
 Required fields:
 
 - source manifest identity
@@ -65,6 +71,19 @@ Required fields:
 
 `cache-plan.json` converts that estimate into ordered entries with content identity, priority, expected size, eviction class, and recovery source.
 
+## Execution Plan
+
+`execution-plan.json` records a proposed data-motion boundary:
+
+- execution mode: local stream, remote expert, or remote block
+- RAM-only, disk-bounded, or no weight cache
+- local and remote stage ownership
+- gateway URL without credentials
+- speculative candidate count
+- security requirements and implementation blockers
+
+The estimator must use `planned_not_executable` until a backend or gateway adapter has correctness proof.
+
 ## Run Configuration
 
 `run-config.json` makes comparisons honest. It records:
@@ -75,6 +94,7 @@ Required fields:
 - dtype, quantization, and deterministic settings
 - prompt-suite identifier and sanitized prompt inputs
 - cache and KV policy configuration
+- execution mode, gateway boundary, tensor detail, and speculative token count
 - correctness tolerance and quality thresholds declared before the run
 
 ## Proof Events

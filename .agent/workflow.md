@@ -26,4 +26,4 @@ Only mark a packet `complete` when its stated evidence exists. A command that ru
 
 ## Current Lane
 
-`goal-packets/01-manifest-only-estimator.md` is the active implementation lane.
+`goal-packets/02-tensor-index-and-cache-plan.md` is the active implementation lane.

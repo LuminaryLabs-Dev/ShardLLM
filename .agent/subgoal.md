@@ -2,16 +2,14 @@
 
 Status: active
 
+## Previous Proof
+
+The manifest-only estimator is validated for Kimi K2.6 and GLM-5.2 with zero weight shards downloaded.
+
 ## Target
 
-Turn the documented manifest-only estimator into the first executable ShardLLM proof path.
-
-## Done When
-
-- A narrow inspect command or equivalent entrypoint writes public-safe manifest and report artifacts.
-- The run records metadata bytes separately from model size.
-- The output makes no executor-feasibility claim.
+Add safetensors-header range parsing so local and hybrid plans can report exact tensor byte ranges, per-expert bytes, active-slice cache windows, and expected activation-versus-weight transfer costs.
 
 ## Source
 
-See `goal-packets/01-manifest-only-estimator.md` for the complete bounded contract.
+See `goal-packets/02-tensor-index-and-cache-plan.md` for the complete bounded contract.

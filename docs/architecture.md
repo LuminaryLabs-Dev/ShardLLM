@@ -19,8 +19,11 @@ tensor-index
 budget-estimator
   estimates RAM, disk, network, and active execution window sizes
 
+execution-planner
+  selects local streaming, remote expert, or remote block boundaries
+
 cache-manager
-  stores selected remote tensors or shards under an explicit disk budget
+  holds selected tensors under an explicit RAM or disk policy
 
 layer-scheduler
   decides which layer or active expert group is needed next
@@ -49,9 +52,26 @@ Remote Source
   -> measured proof
 ```
 
+## Execution Modes
+
+```text
+local-stream
+  selected weight ranges -> Mac compute
+
+remote-expert
+  Mac activation + expert ids -> remote experts -> output activation
+
+remote-block
+  Mac activation -> remote layer group -> output activation
+```
+
+All three modes share the source manifest, tensor index, budget, proof, and KV contracts. See [Hybrid Execution](hybrid-execution.md) for boundaries and promotion gates.
+
 ## Local Cache Shape
 
 The cache should not be "download the model slowly." It should be a bounded working set.
+
+RAM-only mode persists metadata and proof but never persists weight payloads. Disk-bounded mode may persist selected ranges under an explicit limit. Neither policy is implemented by the current estimator.
 
 ```text
 .shardllm-cache/
@@ -100,6 +120,7 @@ Example event types:
 metadata_read
 tensor_index_built
 budget_estimated
+execution_plan_built
 cache_fetch_started
 cache_fetch_completed
 layer_window_loaded

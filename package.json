@@ -1,0 +1,17 @@
+{
+  "name": "shardllm",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Manifest-only research tooling for shard-aware large-model inference.",
+  "type": "module",
+  "bin": {
+    "shardllm": "./bin/shardllm.mjs"
+  },
+  "scripts": {
+    "inspect": "node ./bin/shardllm.mjs inspect",
+    "check": "node --check ./bin/shardllm.mjs && node --check ./src/artifacts.mjs && node --check ./src/cli.mjs && node --check ./src/estimator.mjs && node --check ./src/execution-plan.mjs && node --check ./src/huggingface-client.mjs && node --check ./src/tensor-index.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

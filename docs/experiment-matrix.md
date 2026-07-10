@@ -9,6 +9,7 @@ Run these experiments in order. Each row should become one dated run directory a
 | E0 | Remote inspection | Kimi K2.6 and GLM-5.2 metadata | manifest and downloaded-byte count | Can the model be planned without full weights? |
 | E1 | Index classification | A public safetensors-indexed model | tensor index and byte reconciliation | Are tensors grouped accurately enough to budget? |
 | E2 | Cache simulation | E1 manifest, no executor | cache plan, cold/warm estimates | Does a bounded working set exist? |
+| E2H | Hybrid plan | E1 manifest, no executor | execution plan and data-motion estimate | Which local/remote boundary moves the fewest bytes safely? |
 | E3 | Reference executor | Small compatible model | logits/tokens against reference | Can the adapter run a correct layer path? |
 | E4 | Evicting slice | E3 model | same output plus peak-RAM trace | Does loading and eviction preserve correctness? |
 | E5 | MoE active slice | Small MoE with inspectable routing | selected experts, bytes, output trace | Is expert-level scheduling actually smaller than a whole layer? |

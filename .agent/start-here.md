@@ -20,7 +20,7 @@ Read these files in order:
 
 ## Current Focus
 
-Build the manifest-only estimator before any executor or KV reconstruction work. It must inspect public model metadata and safetensors indexes without full-weight download, then write the artifacts defined in `../docs/artifact-contracts.md`.
+Complete exact safetensors byte accounting and bounded cache planning before executor or KV reconstruction work. The planner now records local-stream, remote-expert, and remote-block boundaries, but those adapters remain non-executable.
 
 ## Guardrails
 

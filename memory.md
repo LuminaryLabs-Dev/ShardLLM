@@ -14,6 +14,7 @@ ShardLLM should be designed as a small set of separable runtime domains:
 model-source
 -> shard-manifest
 -> tensor-index
+-> execution-planner
 -> layer-or-expert-scheduler
 -> bounded-cache
 -> executor-adapter
@@ -32,6 +33,9 @@ model-source
 - Separate correctness, resource bounds, resume behavior, and KV quality in versioned validation artifacts; no single measurement establishes feasibility.
 - Keep Nexus Engine integration as a later domain-kit promotion path, not the first implementation step.
 - Use `.agent/` as the goal-mode workspace for live progress, subgoals, lessons, feedback, and resumable agent handoff.
+- Keep the manifest-only estimator dependency-free on Node.js built-ins; its modules map directly to the model-source, tensor-index, budget, and proof-harness domains.
+- Treat local streaming, remote expert, and remote block execution as adapters over one shared plan; remote modes move compute toward persistent weights and keep client weight storage optional.
+- Preserve current full tensor-index output by default and offer compact summary output explicitly when low metadata storage matters.
 
 ## Initial Model Targets
 

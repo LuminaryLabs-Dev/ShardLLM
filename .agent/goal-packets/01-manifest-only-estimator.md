@@ -1,6 +1,6 @@
 # Goal Packet 01: Manifest-Only Estimator
 
-Status: active
+Status: validated
 
 ## Outcome
 
@@ -28,4 +28,12 @@ Provide `shardllm inspect <owner/model>` or an equivalent narrow entrypoint that
 
 ## Next Action
 
-Inspect the repository's available language and packaging conventions, then choose the smallest CLI shape that can write the artifact contract.
+Advance to `02-tensor-index-and-cache-plan.md` to add safetensors-header range parsing and exact byte accounting.
+
+## Validation Evidence
+
+- `npm run check` passed on Node.js 25.8.1.
+- `shardllm inspect` completed for `moonshotai/Kimi-K2.6` and `zai-org/GLM-5.2`.
+- The Kimi run recorded 23,616,111 metadata bytes, 208,550 tensors, 64 shards, and zero weight shards downloaded.
+- The GLM run recorded 5,435,229 metadata bytes, 59,585 tensors, 282 shards, and zero weight shards downloaded.
+- Both reports remain classified as `estimator_only`; byte-range sizing and executor proof are not claimed.

@@ -2,7 +2,7 @@
 
 Status: active
 
-This folder documents the ShardLLM research direction before runtime implementation.
+This folder documents the ShardLLM research direction and the current estimator implementation.
 
 ## Reading Order
 
@@ -11,11 +11,12 @@ This folder documents the ShardLLM research direction before runtime implementat
 3. [Architecture](architecture.md)
 4. [Model Targets](model-targets.md)
 5. [KV Cache Strategy](kv-cache-strategy.md)
-6. [Validation Plan](validation.md)
-7. [Experiment Matrix](experiment-matrix.md)
-8. [Artifact Contracts](artifact-contracts.md)
-9. [Roadmap](roadmap.md)
-10. [Nexus Engine Path](nexus-engine-path.md)
+6. [Hybrid Execution](hybrid-execution.md)
+7. [Validation Plan](validation.md)
+8. [Experiment Matrix](experiment-matrix.md)
+9. [Artifact Contracts](artifact-contracts.md)
+10. [Roadmap](roadmap.md)
+11. [Nexus Engine Path](nexus-engine-path.md)
 
 ## Documentation Rule
 

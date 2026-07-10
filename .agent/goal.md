@@ -8,7 +8,7 @@ Determine, with measured evidence, whether a massive model can be explored on co
 
 ## Active Goal
 
-Implement and validate a manifest-only estimator for Kimi K2.6 and GLM-5.2.
+Complete exact tensor byte accounting and bounded local/hybrid cache planning for Kimi K2.6 and GLM-5.2.
 
 ## Success Criteria
 

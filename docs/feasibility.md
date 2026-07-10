@@ -13,6 +13,7 @@ ShardLLM is feasible as a research harness. It is not yet feasible to promise no
 - Simulating layer-by-layer memory windows before implementing execution.
 - Measuring KV cache growth separately from weight streaming.
 - Producing a "feasible / barely feasible / not feasible" report for a target machine.
+- Planning RAM-only, remote-expert, and remote-block execution without claiming that the adapters exist.
 
 ## Risky
 
@@ -21,6 +22,20 @@ ShardLLM is feasible as a research harness. It is not yet feasible to promise no
 - Assuming tensor shard layout is convenient for active expert reads.
 - Assuming llama.cpp supports the exact custom architecture and tensor layout needed for each target model.
 - Treating lossy KV reconstruction as reliable before drift tests exist.
+- Assuming remote expert execution is private, correct, or fast before protocol and latency proof exists.
+
+## Storage-Free Client Direction
+
+The strongest path without persistent Mac weight storage is hybrid execution:
+
+```text
+keep weights near remote compute
+-> send activations instead of weight tensors
+-> keep only bounded state and hot tensors in Mac RAM
+-> verify several speculative tokens per expensive target sweep
+```
+
+This can reduce client data movement, but it changes the claim from fully local inference to locally orchestrated distributed inference. Storage, compute cost, trust, and privacy move to the remote gateway or workers.
 
 ## Likely Wrong In The First Version
 

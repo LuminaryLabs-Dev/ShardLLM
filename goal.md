@@ -11,6 +11,7 @@ Create a public research runtime that can estimate, schedule, and eventually exe
 - A model can be inspected from remote metadata without downloading all weights.
 - The runtime can produce a per-layer and per-expert memory budget.
 - The runtime can build a resumable local cache plan for only the needed tensors.
+- The runtime can plan RAM-only and hybrid remote execution without treating planned adapters as working inference.
 - The runtime can run or simulate layer-by-layer execution under a configured RAM and disk budget.
 - KV cache strategies are measured separately from weight streaming.
 - Feasibility is reported only from repeatable validation artifacts, with correctness, resource, and recovery results kept separate.

@@ -68,6 +68,9 @@ Inputs:
 - max disk cache
 - network policy
 - whole-shard vs range-read policy
+- RAM-only vs disk-bounded weight policy
+- local-stream vs remote-expert vs remote-block execution mode
+- speculative candidate count
 
 Output:
 
@@ -75,6 +78,7 @@ Output:
 - eviction policy
 - resume plan
 - expected network cost
+- execution-plan artifact and unresolved adapter blockers
 
 ## Phase 4 - Execution Spike
 
@@ -85,8 +89,12 @@ Candidate backends:
 - llama.cpp where architecture support exists
 - Transformers for reference correctness
 - custom safetensors + Metal/CPU spike for a narrow layer group
+- remote expert adapter against a small reference MoE
+- remote block adapter against a small reference transformer
 
 Success means one layer or active expert group can be loaded, run, measured, and evicted.
+
+Speculative verification follows only after one-token reference correctness exists.
 
 ## Phase 5 - KV Manager
 
