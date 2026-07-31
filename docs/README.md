@@ -17,6 +17,7 @@ This folder documents the ShardLLM research direction and the current estimator 
 9. [Artifact Contracts](artifact-contracts.md)
 10. [Roadmap](roadmap.md)
 11. [Nexus Engine Path](nexus-engine-path.md)
+12. [Visual Identity](visual-identity.md)
 
 ## Documentation Rule
 

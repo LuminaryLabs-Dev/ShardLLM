@@ -1,5 +1,7 @@
 # ShardLLM
 
+![ShardLLM metadata planning flow](docs/assets/brand/social-card.png)
+
 ShardLLM is a research runtime for exploring very large language model inference on constrained devices without requiring the full model to be downloaded or resident in memory.
 
 The core idea is to treat model execution as a sharded, throttled, resumable process:
@@ -80,3 +82,10 @@ src/artifacts.mjs              versioned local proof artifacts
 - [Artifact Contracts](docs/artifact-contracts.md) - reproducible manifests, plans, proof events, and reports.
 - [Roadmap](docs/roadmap.md) - staged path from metadata estimator to runtime proof.
 - [Nexus Engine Path](docs/nexus-engine-path.md) - future domain-kit promotion boundary.
+- [Visual Identity](docs/visual-identity.md) - reusable repository artwork and usage guidance.
+
+## Project Policies
+
+- [Contributing](CONTRIBUTING.md)
+- [Security](SECURITY.md)
+- [Changelog](CHANGELOG.md)
