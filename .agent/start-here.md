@@ -28,4 +28,4 @@ Complete exact safetensors byte accounting and bounded cache planning before exe
 - Do not claim runtime feasibility from an estimate alone.
 - Do not download full, gated, or private model weights by default.
 - Do not commit secrets, auth state, cached weights, or token-bearing logs.
-- Preserve existing working-tree changes; they are the documentation and validation-plan baseline currently under review.
+- Inspect the worktree before changes and preserve unrelated work.

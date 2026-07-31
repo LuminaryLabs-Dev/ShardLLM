@@ -1,0 +1,88 @@
+{
+  "generatedAt": "2026-07-31T19:52:12.444416+00:00",
+  "project": "ShardLLM",
+  "schemaVersion": "repo-image-pack.v1",
+  "settings": {
+    "backgroundColor": "#14213D",
+    "coverResizeMode": "contain-pad-no-crop",
+    "edgeContract": 1,
+    "keyColor": "#FF00FF",
+    "logoPosition": "top-left",
+    "logoSize": 180,
+    "opaqueThreshold": 220.0,
+    "primaryColor": "#23AFCB",
+    "sourceMode": "chroma",
+    "transparentThreshold": 12.0
+  },
+  "sha256": {
+    "cover-1280x640.png": "0b3c45c4c1d2bfb9ff88539b7e8d9d5fd961172ec6aedfa80896ba8de6ae6482",
+    "cover-source.png": "251c4acf95525148567f0b7de4a2d2c382fe72afb0df2b6a4a8bc0df1f6e2211",
+    "logo-1024.png": "317783b618a2f28d7ed4bc4f384cada51c0d82ad9eb67a2e723815c764910cff",
+    "logo-256.png": "27d57086afe7836859d77e67e04e97a3a2a8581849c7ce3675ef25b315d62e0f",
+    "logo-512.png": "f7f182845cf98c2d7708233c21853b36be4f7c5e3885b3bd165ca6f861599af7",
+    "logo-mask.png": "3ab6699ff59061adbd75e305e6c0bb76eafedb3421a7b4cdd24e54bcc3c9a1fc",
+    "logo-mask.svg": "208190693caf7c5d90115d8880d757d51db5c512390fe94809564d2cfb36334f",
+    "logo-source.png": "733c237932229a785cebd2ad289c2d064c3d16ed0b41ad7f98656e981671a0f0",
+    "logo-transparent.png": "654f022dfe4f6203acc1b6c83fd0e62e3ff78b81750e21e644dca317f93f88f5",
+    "social-card.png": "d07ffee87ea79287f8117370deb7a98742cc2688df044ea299b75ff7f57e3f44"
+  },
+  "source": {
+    "coverFilename": "cover-source.png",
+    "coverSha256": "f795c3669d0758a669cd4782495b06363689e222f8a98087ed7a35be08b347c8",
+    "logoFilename": "logo-source.png",
+    "logoSha256": "f78b079e1e32e305861f54d3942d60dab2ffd008a70238e20e6951d60b7aea4e"
+  },
+  "summary": "Metadata-only planning tools for shard-aware large-model inference research on constrained devices.",
+  "tools": {
+    "chromaHelper": {
+      "name": "imagegen/remove_chroma_key.py",
+      "sha256": "3f7b9b14ad5c90f37618bc1c16a039a2076abca12ddc41b3ae470e2b1cad6c0e"
+    },
+    "ffmpeg": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+    "ffprobe": "ffprobe version 8.0.1 Copyright (c) 2007-2025 the FFmpeg developers"
+  },
+  "validation": {
+    "dimensions": {
+      "cover-1280x640.png": [
+        1280,
+        640
+      ],
+      "logo-1024.png": [
+        1024,
+        1024
+      ],
+      "logo-256.png": [
+        256,
+        256
+      ],
+      "logo-512.png": [
+        512,
+        512
+      ],
+      "logo-mask.png": [
+        1254,
+        1254
+      ],
+      "logo-source.png": [
+        1254,
+        1254
+      ],
+      "logo-transparent.png": [
+        1254,
+        1254
+      ],
+      "social-card.png": [
+        1280,
+        640
+      ]
+    },
+    "maskCoverage": 0.239103,
+    "status": "pass",
+    "transparentCornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
