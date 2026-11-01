@@ -17,3 +17,7 @@ Establish correctness and resource baselines on a small compatible model before 
 ## Dependency
 
 Packets 01 and 02 provide reproducible manifests, index data, budgets, and cache plans.
+
+## Implementation Subgoal
+
+[Subgoal 03 — Reference Executor and KV Proof](../subgoals/03-reference-executor-and-kv-proof.md) is **planned** and must not become active until Goal Packet 02's real-model Gate 2 byte-accounting and E2 cold/warm cache simulation prerequisites are documented. Its work sequence covers Gate 3 correctness, Gate 4 bounded cache execution, Gate 5 resume and Gate 6 exact/conventional KV baselines. The present packet status remains `planned`.
