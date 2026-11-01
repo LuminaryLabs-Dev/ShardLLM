@@ -6,3 +6,4 @@
 - 2026-07-09 17:02:43 America/New_York - Validated manifest-only inspection for Kimi K2.6 and GLM-5.2 with zero full weight shards downloaded; activated the tensor-index and cache-plan packet.
 - 2026-07-09 17:18:45 America/New_York - Added hybrid execution planning, RAM-only weight-cache configuration, speculative-token planning, compact tensor output, and supporting documentation without running tests.
 - 2026-07-10 02:21:09 America/New_York - Validated syntax and the compact Kimi K2.6 remote-expert planning path before publishing the CLI baseline.
+- 2026-10-31 America/New_York — Integrated opt-in safetensors HTTP header inspection, byte-accurate tensor maps and conservative cache-window planning from the offline-validated Subgoal 02 sandbox into GitHub `main`. Five source files added/updated; verified GitHub hashes match the sandbox. Syntax and seven synthetic cases passed locally; real target and E2 simulation remain pending.
