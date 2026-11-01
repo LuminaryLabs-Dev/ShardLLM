@@ -58,6 +58,16 @@ Artifacts are written below `.shardllm-cache/`, which is ignored by Git. Use `--
 
 Remote expert, remote block, RAM-only weight cache, and speculative-token flags currently produce planning artifacts only. They do not contact a gateway or execute model weights.
 
+## Opt-in Safetensors Header Inspection (Gate 2 research)
+
+The default `inspect` command remains **metadata/index only**. To inspect exact tensor offsets without downloading weight payloads, opt in explicitly:
+
+```sh
+npm run inspect -- moonshotai/Kimi-K2.6 --tensor-detail summary --fetch-shard-headers --ram-gb 16 --ram-cache-gb 1
+```
+
+The new reader requests bounded HTTP `206` byte ranges containing only the 8-byte safetensors length prefix and JSON header. It rejects full-body `200` responses, inconsistent ranges, oversize headers, invalid offsets, and changing ETags; uninspectable shards are reported rather than silently trusted. The byte-accounting report includes absolute half-open tensor offsets and conservative cache-window **plans**. It does **not** fetch tensor payloads, provide cache enforcement, run inference, or prove compatibility with real Kimi/GLM weights. Live-model Gate 2 and E2 cache simulation remain pending; the current implementation was checked against offline synthetic fixtures only.
+
 ## App Structure
 
 ```text
